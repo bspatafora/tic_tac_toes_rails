@@ -18,4 +18,4 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
-gem 'tic_tac_toes', :path => '~/Dropbox/dev/tic_tac_toes'
+gem 'tic_tac_toes'
