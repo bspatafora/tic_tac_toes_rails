@@ -1,8 +1,13 @@
+require 'tic_tac_toes/board'
+
 class GameController < ApplicationController
   def show
-    TicTacToes::Web::Adapter.new_game_state_json
+    @board = TicTacToes::Board.new.spaces unless @board
   end
 
   def move
+    @board = params[:board]
+    @move = params[:move]
+    render :show
   end
 end
