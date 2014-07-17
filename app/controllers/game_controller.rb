@@ -1,13 +1,12 @@
-require 'tic_tac_toes/board'
+require 'ui/adapter'
 
 class GameController < ApplicationController
   def show
-    @board = TicTacToes::Board.new.spaces unless @board
+    @board = UI::Adapter.new_board_structure unless @board
   end
 
   def move
-    @board = params[:board]
-    @move = params[:move]
+    @board = UI::Adapter.move_made(params[:board], params[:move])
     render :show
   end
 end

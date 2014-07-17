@@ -1,22 +1,13 @@
-<p>
-  Board: <%= @board %>
-</p>
-<% if @move %>
-  <p>
-    Move: <%= @move %>
-  </p>
-<% end %>
+<%= @board %>
+
 <%= form_tag(move_path, method: "get") do %>
-  <%= hidden_field_tag('board[]', @board[0]) %>
-  <%= hidden_field_tag('board[]', @board[1]) %>
-  <%= hidden_field_tag('board[]', @board[2]) %>
-  <%= hidden_field_tag('board[]', @board[3]) %>
-  <%= hidden_field_tag('board[]', @board[4]) %>
-  <%= hidden_field_tag('board[]', @board[5]) %>
-  <%= hidden_field_tag('board[]', @board[6]) %>
-  <%= hidden_field_tag('board[]', @board[7]) %>
-  <%= hidden_field_tag('board[]', @board[8]) %>
+
   <%= label_tag(:move, "Pick a space:") %>
   <%= text_field_tag(:move) %>
   <%= submit_tag("Make move") %>
+
+  <% @board.each_with_index do |space, index| %>
+    <%= hidden_field_tag('board[]', @board[index]) %>
+  <% end %>
+
 <% end %>
