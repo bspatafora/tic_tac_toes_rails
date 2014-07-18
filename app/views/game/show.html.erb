@@ -1,4 +1,4 @@
-<%= @board %>
+<%= render 'board', board: @board %>
 
 <%= form_tag(move_path, method: "get") do %>
 

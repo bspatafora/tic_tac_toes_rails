@@ -6,7 +6,17 @@ class GameController < ApplicationController
   end
 
   def move
-    @board = UI::Adapter.move_made(params[:board], params[:move])
+    UI::Adapter.move_made(params[:board], params[:move], self)
+  end
+
+  def valid(board_structure)
+    @board = board_structure
     render :show
+  end
+
+  def game_over(board_structure, message)
+    @board = board_structure
+    @message = message
+    render :game_over
   end
 end

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'game#show'
   get 'move' => 'game#move'
+  get 'game_over' => 'game#game_over'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
