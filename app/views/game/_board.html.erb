@@ -1,5 +1,17 @@
-<p>
-  <%= board[0..2] %><br>
-  <%= board[3..5] %><br>
-  <%= board[6..8] %><br>
-</p>
+<table>
+  <% [(0..2), (3..5), (6..8)].each do |row| %>
+    <tr>
+      <% row.each do |index| %>
+
+        <td>
+          <% if board[index] %>
+            <%= board[index] %>
+          <% else %>
+            <%= link_to "", move_path(board: board, move: index) %>
+          <% end %> 
+        </td>
+
+      <% end %>
+    </tr>
+  <% end %>
+</table>

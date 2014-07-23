@@ -6,15 +6,15 @@ class GameController < ApplicationController
   end
 
   def move
-    UI::Adapter.move_made(params[:board], params[:move], self)
+    UI::Adapter.make_move(params[:board], params[:move], self)
   end
 
-  def valid(board_structure)
+  def move_was_valid(board_structure)
     @board = board_structure
     render :show
   end
 
-  def game_over(board_structure, message)
+  def game_is_over(board_structure, message)
     @board = board_structure
     @message = message
     render :game_over

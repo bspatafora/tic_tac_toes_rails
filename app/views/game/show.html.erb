@@ -1,13 +1,1 @@
 <%= render 'board', board: @board %>
-
-<%= form_tag(move_path, method: "get") do %>
-
-  <%= label_tag(:move, "Pick a space:") %>
-  <%= text_field_tag(:move) %>
-  <%= submit_tag("Make move") %>
-
-  <% @board.each_with_index do |space, index| %>
-    <%= hidden_field_tag('board[]', @board[index]) %>
-  <% end %>
-
-<% end %>
