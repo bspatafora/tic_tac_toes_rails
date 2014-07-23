@@ -1,0 +1,17 @@
+<table>
+  <% [(0..2), (3..5), (6..8)].each do |row| %>
+    <tr>
+      <% row.each do |index| %>
+
+        <td>
+          <%= @board[index] %>
+        </td>
+
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<%= @message %>
+
+<%= link_to "Play again?", root_path %>

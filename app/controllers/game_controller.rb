@@ -17,6 +17,6 @@ class GameController < ApplicationController
   def game_is_over(board_structure, message)
     @board = board_structure
     @message = message
-    render :game_over
+    render :game_is_over
   end
 end
