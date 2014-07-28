@@ -1,12 +1,12 @@
-require 'ui/adapter'
+require 'tic_tac_toes/ui/adapter'
 
 class GameController < ApplicationController
   def show
-    @board = UI::Adapter.new_board_structure unless @board
+    @board = TicTacToes::UI::Adapter.new_board_structure unless @board
   end
 
   def move
-    UI::Adapter.make_move(params[:board], params[:move], self)
+    TicTacToes::UI::Adapter.make_move(params[:board], params[:move], self)
   end
 
   def move_was_valid(board_structure)
