@@ -1,0 +1,9 @@
+<p>User, what turn would you like to play?</p>
+
+<button>
+  <%= link_to "First", board_path %>
+</button>
+
+<button>
+  <%= link_to "Second", move_path(board: @board) %>
+</button>
