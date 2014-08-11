@@ -19,13 +19,13 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  title: "TicTacToes"
-  turn_message: "User, what turn would you like to play?"
-  first: "First"
-  second: "Second"
-  X: "X"
-  O: "O"
-  play_again: "Play again?"
-  tie_game: "Tie game."
-  winner: "%{winning_token} wins!"
+ex:
+  title: "TICTACTOESIES"
+  turn_message: "HELLO AGAIN MY FRIEND! HOW WOULD YOU LIKE TO PICK YOUR TURN?"
+  first: "YES HI I WILL GO FIRST"
+  second: "SECOND IF IT PLEASE"
+  X: "%"
+  O: "@"
+  play_again: "OH YEAH ONE MORE TIME"
+  tie_game: "...it’s a tie. That’s not very exciting at all :|"
+  winner: "THAT PLAYER WHOSE TOKEN IS %{winning_token} WINS WINS WINS!!!"

@@ -4,7 +4,7 @@
       <% row.each do |index| %>
 
         <td>
-          <%= @board[index] %>
+          <%= @board[index] == 'X' ? t(:X) : t(:O) if @board[index] %>
         </td>
 
       <% end %>
@@ -15,5 +15,5 @@
 <%= @message %>
 
 <button>
-  <%= link_to "Play again?", root_path %>
+  <%= link_to t(:play_again), root_path %>
 </button>

@@ -22,13 +22,13 @@ class GameController < ApplicationController
 
   def game_ended_in_draw(game_state)
     @board = TicTacToes::UI::Serializer.game_state_to_board_structure(game_state)
-    @message = 'Tie game.'
+    @message = t(:tie_game)
     render :game_is_over
   end
 
   def game_ended_in_winner(game_state, winning_token)
     @board = TicTacToes::UI::Serializer.game_state_to_board_structure(game_state)
-    @message = "#{winning_token} wins!"
+    @message = t(:winner, winning_token: winning_token == 'X' ? t(:X) : t(:O))
     render :game_is_over
   end
 end

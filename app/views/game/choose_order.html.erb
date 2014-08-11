@@ -1,9 +1,9 @@
-<p>User, what turn would you like to play?</p>
+<p><%= t(:turn_message) %></p>
 
 <button>
-  <%= link_to "First", board_path %>
+  <%= link_to t(:first), board_path %>
 </button>
 
 <button>
-  <%= link_to "Second", move_path(board: @board) %>
+  <%= link_to t(:second), move_path(board: @board) %>
 </button>
