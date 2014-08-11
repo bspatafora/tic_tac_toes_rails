@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'game#choose_order'
+  get 'start_game' => 'game#start_game'
   get 'board' => 'game#board'
   get 'move' => 'game#move'
   get 'game_over' => 'game#game_over'

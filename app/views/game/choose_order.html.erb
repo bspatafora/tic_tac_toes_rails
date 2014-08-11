@@ -1,9 +1,23 @@
-<p><%= t(:turn_message) %></p>
+<%= form_tag(start_game_path, method: "get") do %>
 
-<button>
-  <%= link_to t(:first), board_path %>
-</button>
+  <%= label_tag(:computer_type, t(:select_difficulty)) %>
+    <%= radio_button_tag(:computer_type, "EASY_AI") %>
+    <%= label_tag(:computer_type_easy, t(:easy)) %>
+    <%= radio_button_tag(:computer_type, "MEDIUM_AI") %>
+    <%= label_tag(:computer_type_medium, t(:medium)) %>
+    <%= radio_button_tag(:computer_type, "HARD_AI") %>
+    <%= label_tag(:computer_type_hard, t(:hard)) %>
+    <br>
 
-<button>
-  <%= link_to t(:second), move_path(board: @board) %>
-</button>
+  <%= label_tag(:order, t(:select_order)) %>
+    <%= radio_button_tag(:order, "first") %>
+    <%= label_tag(:order_first, t(:first)) %>
+    <%= radio_button_tag(:order, "second") %>
+    <%= label_tag(:order_second, t(:second)) %>
+    <br>
+
+  <%= hidden_field_tag(:locale, I18n.locale) %>
+
+  <%= submit_tag(t(:start_game)) %>
+
+<% end %>

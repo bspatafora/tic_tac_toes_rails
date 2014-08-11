@@ -7,7 +7,7 @@
           <% if board[index] %>
             <%= board[index] == 'X' ? t(:X) : t(:O) %>
           <% else %>
-            <%= link_to "", move_path(board: board, move: index) %>
+            <%= link_to "", move_path(board: board, computer_type: computer_type, move: index) %>
           <% end %> 
         </td>
 

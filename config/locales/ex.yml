@@ -21,9 +21,14 @@
 
 ex:
   title: "TICTACTOESIES"
-  turn_message: "HELLO AGAIN MY FRIEND! HOW WOULD YOU LIKE TO PICK YOUR TURN?"
+  select_difficulty: "YOU PICK WHICH WONDEROUS ROBOT YOU LIKE BEST: "
+  easy: "TINY TIM"
+  medium: "EQUIVOCATING EDGAR"
+  hard: "HELLISH HELENA"
+  select_order: "AND NOW PLEASE PICK THE ORDER: "
   first: "YES HI I WILL GO FIRST"
   second: "SECOND IF IT PLEASE"
+  start_game: "THE TIME IS NOW MY FRIEND"
   X: "%"
   O: "@"
   play_again: "OH YEAH ONE MORE TIME"

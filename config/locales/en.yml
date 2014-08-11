@@ -21,9 +21,14 @@
 
 en:
   title: "TicTacToes"
-  turn_message: "User, what turn would you like to play?"
-  first: "First"
-  second: "Second"
+  select_difficulty: "Select difficulty: "
+  easy: "Easy"
+  medium: "Medium"
+  hard: "Hard"
+  select_order: "Select order: "
+  first: "I’ll go first"
+  second: "I’ll go second"
+  start_game: "Start game"
   X: "X"
   O: "O"
   play_again: "Play again?"
