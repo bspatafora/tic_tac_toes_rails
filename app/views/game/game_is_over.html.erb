@@ -4,7 +4,7 @@
       <% row.each do |index| %>
 
         <td>
-          <%= @board[index] == 'X' ? t(:X) : t(:O) if @board[index] %>
+          <%= @board[index] == 'X' ? translate(:X) : translate(:O) if @board[index] %>
         </td>
 
       <% end %>
@@ -15,5 +15,5 @@
 <%= @message %>
 
 <button>
-  <%= link_to t(:play_again), root_path %>
+  <%= link_to translate(:play_again), root_path %>
 </button>
