@@ -1,3 +1,8 @@
+<% if flash[:alert] %>
+  <div><%= flash[:alert] %></div>
+  <br>
+<% end %>
+
 <%= form_tag(start_game_path, method: "get") do %>
 
   <%= label_tag(:computer_type, translate(:select_difficulty)) %>

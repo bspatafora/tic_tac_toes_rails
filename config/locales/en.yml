@@ -29,6 +29,7 @@ en:
   first: "I’ll go first"
   second: "I’ll go second"
   start_game: "Start game"
+  incomplete_form_alert: "Please select both a difficulty and an order"
   X: "X"
   O: "O"
   play_again: "Play again?"

@@ -3,10 +3,15 @@ require 'tic_tac_toes/ui/serializer'
 
 class GameController < ApplicationController
   def start_game
-    board = TicTacToes::UI::Serializer.new_board_structure
-    game_state = TicTacToes::UI::Serializer.game_state_from_board_structure(board,
-                                                                            params[:computer_type])
-    TicTacToes::UI::Adapter.start_game(params[:order], game_state, self)
+    if params[:computer_type] && params[:order]
+      board = TicTacToes::UI::Serializer.new_board_structure
+      game_state = TicTacToes::UI::Serializer.game_state_from_board_structure(board,
+                                                                              params[:computer_type])
+      TicTacToes::UI::Adapter.start_game(params[:order], game_state, self)
+    else
+      flash.now[:alert] = translate(:incomplete_form_alert)
+      render :settings
+    end
   end
 
   def move

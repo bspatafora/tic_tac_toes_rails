@@ -29,6 +29,7 @@ ex:
   first: "YES HI I WILL GO FIRST"
   second: "SECOND IF IT PLEASE"
   start_game: "THE TIME IS NOW MY FRIEND"
+  incomplete_form_alert: "COME ON NOW I KNOW YOU CAN DO THIS"
   X: "%"
   O: "@"
   play_again: "OH YEAH ONE MORE TIME"
