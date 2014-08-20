@@ -16,6 +16,7 @@ gem 'spring', group: :development
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'jasmine'
 end
 
 gem 'tic_tac_toes'
