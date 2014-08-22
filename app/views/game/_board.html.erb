@@ -3,7 +3,7 @@
     <tr>
       <% row.each do |index| %>
 
-        <td>
+        <td data-name="cell" data-id="<%= index %>">
           <% if board[index] %>
             <%= board[index] == 'X' ? translate(:X) : translate(:O) %>
           <% else %>

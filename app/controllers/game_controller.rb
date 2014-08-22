@@ -1,3 +1,4 @@
+require 'json'
 require 'tic_tac_toes/ui/adapter'
 require 'tic_tac_toes/ui/serializer'
 
@@ -23,6 +24,7 @@ class GameController < ApplicationController
   def moves_were_made(game_state)
     @board = TicTacToes::UI::Serializer.board_structure_from_game_state(game_state)
     @computer_type = TicTacToes::UI::Serializer.computer_type_from_game_state(game_state)
+    @predictions = JSON.generate({ spaces: TicTacToes::UI::Adapter.predictions(game_state) })
     render :board
   end
 

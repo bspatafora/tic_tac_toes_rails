@@ -1,1 +1,17 @@
+<script>
+  $(function() {
+    var predictions = JSON.parse('<%= raw @predictions %>')
+
+    $('[data-name=cell]').hover(function(event) {
+      var dataId = parseInt($(this).attr('data-id'))
+
+      $('body').append('<div data-id="output"></div>')
+        $('[data-id=output]').html(predictions.spaces[dataId])
+      },
+      function(event) {
+        $('[data-id=output]').remove()
+    })
+  })
+</script>
+
 <%= render 'board', board: @board, computer_type: @computer_type %>
