@@ -5,13 +5,13 @@
 
 <%= form_tag(start_game_path, method: "get") do %>
 
-  <%= label_tag(:computer_type, translate(:select_difficulty)) %>
-    <%= radio_button_tag(:computer_type, "EASY_AI") %>
-    <%= label_tag(:computer_type_easy, translate(:easy)) %>
-    <%= radio_button_tag(:computer_type, "MEDIUM_AI") %>
-    <%= label_tag(:computer_type_medium, translate(:medium)) %>
-    <%= radio_button_tag(:computer_type, "HARD_AI") %>
-    <%= label_tag(:computer_type_hard, translate(:hard)) %>
+  <%= label_tag(:ai_type, translate(:select_difficulty)) %>
+    <%= radio_button_tag(:ai_type, "EASY_AI") %>
+    <%= label_tag(:ai_type_easy, translate(:easy)) %>
+    <%= radio_button_tag(:ai_type, "MEDIUM_AI") %>
+    <%= label_tag(:ai_type_medium, translate(:medium)) %>
+    <%= radio_button_tag(:ai_type, "HARD_AI") %>
+    <%= label_tag(:ai_type_hard, translate(:hard)) %>
     <br>
 
   <%= label_tag(:order, translate(:select_order)) %>
