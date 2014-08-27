@@ -4,3 +4,6 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
+
+load 'tic_tac_toes/tasks/set_up_databases.rake'
+load 'tic_tac_toes/tasks/destroy_databases.rake'

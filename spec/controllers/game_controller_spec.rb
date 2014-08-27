@@ -8,7 +8,7 @@ describe GameController, :type => :controller do
       ai_type = 'EASY_AI'
       order = 'first'
       game_state = double
-      allow(TicTacToes::UI::Serializer).to receive(:game_state_from_board_structure) { game_state }
+      allow(TicTacToes::UI::Serializer).to receive(:game_state) { game_state }
 
       expect(TicTacToes::UI::Adapter).to receive(:start_game).with(order, game_state, GameController)
       get :start_game, { ai_type: ai_type, order: order }
@@ -21,7 +21,7 @@ describe GameController, :type => :controller do
       move = '0'
       ai_type = 'EASY_AI'
       game_state = double
-      allow(TicTacToes::UI::Serializer).to receive(:game_state_from_board_structure) { game_state }
+      allow(TicTacToes::UI::Serializer).to receive(:game_state) { game_state }
 
       expect(TicTacToes::UI::Adapter).to receive(:make_move).with(game_state, move, GameController)
       get :move, { board: board, move: move, ai_type: ai_type }
