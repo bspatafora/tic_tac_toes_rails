@@ -9,7 +9,8 @@ class GameController < ApplicationController
     if params[:ai_type] && params[:order]
       game_state = TicTacToes::UI::Serializer.game_state(TicTacToes::UI::Serializer.new_board_structure,
                                                          params[:ai_type],
-                                                         nil)
+                                                         nil,
+                                                         'unused_connection')
       TicTacToes::UI::Adapter.start_game(params[:order], game_state, self)
     else
       flash.now[:alert] = translate(:incomplete_form_alert)
@@ -18,14 +19,25 @@ class GameController < ApplicationController
   end
 
   def move
+    connection = PG.connect(dbname: ENV['TTT_DATABASE'],
+                            host: ENV['TTT_HOST'],
+                            port: ENV['TTT_PORT'],
+                            user: ENV['TTT_USER'],
+                            password: ENV['TTT_PASSWORD'])
     game_state = TicTacToes::UI::Serializer.game_state(params[:board],
                                                        params[:ai_type],
-                                                       params[:move_history])
+                                                       params[:move_history],
+                                                       connection)
     TicTacToes::UI::Adapter.make_move(game_state, params[:move], self)
   end
 
   def game_history
-    storage_wrapper = TicTacToes::Database::PGWrapper.new('tic_tac_toes')
+    connection = PG.connect(dbname: ENV['TTT_DATABASE'],
+                            host: ENV['TTT_HOST'],
+                            port: ENV['TTT_PORT'],
+                            user: ENV['TTT_USER'],
+                            password: ENV['TTT_PASSWORD'])
+    storage_wrapper = TicTacToes::Database::PGWrapper.new(connection)
     presenter = TicTacToes::Core::Presenter
     @game_history = presenter.game_history_strings(storage_wrapper)
   end
